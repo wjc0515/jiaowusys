@@ -13,3 +13,15 @@
 3. 新建类 **service->LoginService**，实现**getUserByNameAndPwd**方法，此方法调用**UserLoginMapper**中的**getUserLogin**方法；
 4. 新建类**controller->LoginController**，调用**LoginService**中的**getUserByNameAndPwd**方法。
 
+## 2018.4.12
+本次更新完成管理员权限学生界面的添加和修改用户信息
+> 日期转换问题，添加joda-time依赖
+``` xml
+<dependency>
+	<groupId>joda-time</groupId>
+	<artifactId>joda-time</artifactId>
+	<version>2.9.9</version>
+</dependency>
+``` 
+
+
