@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sptpc.domain.Student;
@@ -26,4 +27,19 @@ public class AdminCotroller {
 		
 		return mv;		
 	}
+	
+	@RequestMapping(value="ctr_addStudent",method=RequestMethod.GET)
+	public ModelAndView addStudent(){
+		ModelAndView mv = new ModelAndView("admin/addStudent");
+		
+		mv.addObject("collegeList", null);
+		return mv;
+	}
+	@RequestMapping(value="ctr_addStudent",method=RequestMethod.POST)
+	public ModelAndView sumbitStudentForm(Student student){
+		
+		return null;
+	}
+	
+	
 }
