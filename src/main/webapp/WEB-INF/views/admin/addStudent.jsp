@@ -32,18 +32,18 @@
 							  <div class="form-group">
 							    <label for="inputEmail3" class="col-sm-2 control-label">学号</label>
 							    <div class="col-sm-10">
-							      <input type="number" class="form-control" id="inputEmail3" name="userid" placeholder="请输入学号"
+							      <input type="number" class="form-control" id="inputEmail3" name="userID" placeholder="请输入学号"
 								  <c:if test='${student!=null}'>
-										 value="${student.userid}"
+										 value="${student.userID}"
 								  </c:if>>
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label for="inputPassword3" class="col-sm-2 control-label">姓名</label>
 							    <div class="col-sm-10">
-							      <input type="text" class="form-control" id="inputPassword3" name="username" placeholder="请输入姓名"
+							      <input type="text" class="form-control" id="inputPassword3" name="userName" placeholder="请输入姓名"
 								  <c:if test='${student!=null}'>
-										 value="${student.username}"
+										 value="${student.userName}"
 								  </c:if>>
 							    </div>
 							  </div>
@@ -61,21 +61,21 @@
 							  <div class="form-group">
 							    <label for="inputPassword3" class="col-sm-2 control-label">出生年份</label>
 							    <div class="col-sm-10">
-								    <input type="date" value="1996-09-02" name="birthyear"/>
+								    <input type="date" value="1996-09-02" name="birthYear"/>
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label for="inputPassword3" class="col-sm-2 control-label" name="grade">入学时间</label>
 							    <div class="col-sm-10">
-								    <input type="date" value="2015-09-02" name="grade"/>
+								    <input type="date" value="2015-09-02" name="grade" />
 							    </div>
 							  </div>
 							  <div class="form-group">
 							    <label for="inputPassword3" class="col-sm-2 control-label" name="grade">所属院系</label>
 							    <div class="col-sm-10">
-								    <select class="form-control" name="collegeid">
+								    <select class="form-control" name="collegeID">
 										<c:forEach items="${collegeList}" var="item">
-											<option value="${item.collegeid}">${item.collegename}</option>
+											<option value="${item.collegeID}">${item.collegeName}</option>
 										</c:forEach>
 								    </select>
 							    </div>

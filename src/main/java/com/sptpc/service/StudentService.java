@@ -17,5 +17,22 @@ public class StudentService {
 	public List<Student> getAllStudent(){		
 		return studentMapper.getAllStudent();
 	}
+	
+	//插入学生的信息
+	public int saveStudent(Student student){
+		return studentMapper.insertStudent(student);
+	}
+	
+	//根据学生id得到学生信息
+	public Student getStudentByID(String id){
+		return studentMapper.findStudentByID(Integer.parseInt(id));
+	}
+
+	//更新学生信息
+	public int updateStudent(Student student) {
+		// TODO Auto-generated method stub
+		return studentMapper.updateStudent(student);
+	}
+	
 
 }

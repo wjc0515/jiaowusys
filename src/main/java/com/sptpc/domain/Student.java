@@ -13,11 +13,11 @@ public class Student implements Serializable{
 	private int userID;
 	private int collegeID;
 	private String userName;
-	private String sex;
+	private String sex;	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birthYear;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date grade;
+	private Date grade;	
 	private String collegeName;
 	
 	public String getCollegeName() {
