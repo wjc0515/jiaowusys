@@ -157,7 +157,13 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>   
+		<!-- 日期/时间库，解决日期转换的问题-->
+		<dependency>
+		  <groupId>joda-time</groupId>
+		  <artifactId>joda-time</artifactId>
+		  <version>2.9.9</version>
+		</dependency>      
 	</dependencies>
   <build>
     <finalName>jiaowusys</finalName>

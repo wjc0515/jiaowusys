@@ -21,15 +21,7 @@
 
 	<context:annotation-config />
 
-	<mvc:annotation-driven conversion-service="conversionService" />
+	<mvc:annotation-driven/>
 	
-	<!--   配置转换器（比如Date类型） -->
-	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-	    <property name="converters">
-	        <list>
-	            <bean class="com.sptpc.util.CustomDateConverter" />
-	        </list>
-	    </property>
-	</bean>
 
 </beans>
