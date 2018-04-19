@@ -34,5 +34,17 @@ public class StudentService {
 		return studentMapper.updateStudent(student);
 	}
 	
+	//根据学生id删除学生信息
+	public int deleteStudentByID(String id){
+		int n = studentMapper.deleteStuCourseByID(Integer.parseInt(id));
+		return studentMapper.deleteStudentByID(Integer.parseInt(id));
+//		if(n == 0){
+//			return 0;
+//		}else{
+//			return studentMapper.deleteStudentByID(Integer.parseInt(id));
+//		}
+		
+	}
+	
 
 }

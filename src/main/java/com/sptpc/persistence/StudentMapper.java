@@ -18,4 +18,10 @@ public interface StudentMapper {
 
 	//更新学生信息
 	public int updateStudent(Student student);
+	
+	//根据学生ID删除学生选课信息
+	public int deleteStuCourseByID(int id);
+	
+	//根据学生ID删除学生信息
+	public int deleteStudentByID(int id);
 }

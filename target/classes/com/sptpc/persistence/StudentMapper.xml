@@ -45,7 +45,13 @@
   	where userID=#{userID}
   </update>
   
+  <delete id="deleteStudentByID" parameterType="int">
+  	delete from student where userID=#{id}
+  </delete>
   
+  <delete id="deleteStuCourseByID" parameterType="int">
+  	delete from selectedcourse where studentID=#{id}
+  </delete>
   
 
 </mapper>

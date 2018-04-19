@@ -76,6 +76,14 @@ public class AdminCotroller {
 			mv = new ModelAndView("redirect:ctr_showStudent");
 		}
 		return mv;
-	}	
+	}
+	
+	@RequestMapping(value="ctr_removeStudent")
+	public ModelAndView removeStudent(@RequestParam("id") String userID){
+		int n = studentService.deleteStudentByID(userID);
+		ModelAndView mv;
+		mv = new ModelAndView("redirect:ctr_showStudent");
+		return mv;
+	}
 	
 }
