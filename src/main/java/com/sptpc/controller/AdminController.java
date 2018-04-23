@@ -17,7 +17,7 @@ import com.sptpc.service.CollegeService;
 import com.sptpc.service.StudentService;
 
 @Controller
-public class AdminCotroller {
+public class AdminController {
 	@Autowired
 	private StudentService studentService;
 	@Autowired
