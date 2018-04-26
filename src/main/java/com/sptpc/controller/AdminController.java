@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sptpc.domain.College;
+import com.sptpc.domain.Course;
 import com.sptpc.domain.Student;
 import com.sptpc.service.CollegeService;
+import com.sptpc.service.CourseService;
 import com.sptpc.service.StudentService;
 
 @Controller
@@ -22,6 +24,8 @@ public class AdminController {
 	private StudentService studentService;
 	@Autowired
 	private CollegeService collegeService;
+	@Autowired
+	private CourseService courseService;
 
 	@RequestMapping("ctr_showStudent")
 	public ModelAndView showStudent(HttpSession session){
@@ -84,6 +88,17 @@ public class AdminController {
 		ModelAndView mv;
 		mv = new ModelAndView("redirect:ctr_showStudent");
 		return mv;
+	}
+	
+	//课程信息显示
+	@RequestMapping(value = "ctr_showCourse")
+	public ModelAndView showCourse(){
+		List<Course> courseList = null;
+		ModelAndView mv = new ModelAndView("admin/showCourse");
+		courseList = courseService.getAllCourse();
+		mv.addObject("courseList", courseList);
+		
+		return mv;	
 	}
 	
 }
