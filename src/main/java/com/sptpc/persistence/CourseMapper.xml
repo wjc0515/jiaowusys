@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sptpc.persistence.CourseMapper">
+
+  <cache />
+  <select id="getAllCourse" resultType="Course">
+  	select 
+  		courseID as courseID,
+  		courseName as courseName,
+  		teacherID as teacherID,
+  		courseTime as courseTime,
+  		classRoom as classRoom,
+  		courseWeek as courseWeek,
+  		courseType as courseType,
+  		collegeID as collegeID,
+  		score as score
+  	from course
+  </select>
+  
+  <select id="getCourseByID" parameterType="int" resultType="Course">
+  	select 
+  		courseID as courseID,
+  		courseName as courseName,
+  		teacherID as teacherID,
+  		courseTime as courseTime,
+  		classRoom as classRoom,
+  		courseWeek as courseWeek,
+  		courseType as courseType,
+  		collegeID as collegeID,
+  		score as score
+  	from course 
+  	where courseID=#{id}
+  </select>
+  
+  <update id="updateCourse" parameterType="Course">
+  	update course set
+  		courseName=#{courseName},
+  		teacherID=#{teacherID},
+  		courseTime=#{courseTime},
+  		classRoom=#classRoom},
+  		courseWeek=#{courseWeek},
+  		courseType=#{courseType},
+  		collegeID=#{collegeID},
+  		score=#{score}
+  	where courseID=#{courseID}
+  </update>
+  
+  
+  
+ 
+  
+  
+  
+
+</mapper>
