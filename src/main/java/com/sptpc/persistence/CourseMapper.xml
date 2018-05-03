@@ -47,11 +47,31 @@
   	where courseID=#{courseID}
   </update>
   
-  
-  
+  <delete id="deleteCourserByID" parameterType="int">  	
+  	delete from course where courseID=#{parseInt}
+  </delete>
+  <delete id="deleteSelectCourseByID" parameterType="int">
+  	delete from selectedcourse where courseID=#{id};
+  </delete>
  
+  <insert id="insertCourse" parameterType="Course">
+  	insert into course
+  	values(
+  		#{courseID},
+  		#{courseName},
+  		#{teacherID},
+  		#{courseTime},
+  		#{classRoom},
+  		#{courseWeek},
+  		#{courseType},
+  		#{collegeID},
+  		#{score}
+  	)
+  </insert>
   
-  
+  <select id="getCourseByTecID" parameterType="int" resultType="Course">
+  	select * from course where teacherID = #{userID}
+  </select>
   
 
 </mapper>

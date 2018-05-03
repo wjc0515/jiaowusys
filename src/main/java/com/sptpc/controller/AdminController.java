@@ -134,5 +134,36 @@ public class AdminController {
 		}
 		return mv;
 	}
+	//删除课程信息
+	@RequestMapping(value = "ctr_removeCourse")
+	public ModelAndView removeCourse(@RequestParam("id") String userID){
+		int n = courseService.deleteCourseByID(userID);
+		ModelAndView mv;
+		mv = new ModelAndView("redirect:ctr_showCourse");
+		return mv;
+	}
+	//增加课程信息
+	@RequestMapping(value="ctr_addCourse",method=RequestMethod.GET)
+	public ModelAndView addCourse(){
+		ModelAndView mv = new ModelAndView("admin/addCourse");
+		List<Teacher> teacherList = teacherService.getAllTeacher();
+		mv.addObject("teacherList", teacherList);
+		List<College> collegeList = collegeService.getAllCollege();
+		mv.addObject("collegeList",collegeList);
+		return mv;
+	}
+	@RequestMapping(value="ctr_addCourse",method=RequestMethod.POST)
+	public ModelAndView sumbitCourseForm(Course course){
+		//调用服务层，把表单中的内容（Student对象）保存到数据库中
+		ModelAndView mv;
+//		int n = studentService.saveStudent(student);
+		int n = courseService.saveCourse(course);
+		if(n == 0){//不成功
+			mv = new ModelAndView("admin/addCourse");
+		}else{
+			mv = new ModelAndView("redirect:ctr_showCourse");
+		}		
+		return mv;
+	}
 	
 }

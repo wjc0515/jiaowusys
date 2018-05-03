@@ -29,7 +29,13 @@ public class LoginController {
 		if(str.equals("admin")){
 			session.setAttribute("ul", userlogin);
 			mv = new ModelAndView("redirect:ctr_showStudent");
-		}		
+		}else if(str.equals("teacher")){
+			session.setAttribute("ul", userlogin);
+			mv = new ModelAndView("redirect:ctr_tecShowCourse");
+		}else if(str.equals("student")){
+			session.setAttribute("ul", userlogin);
+			mv = new ModelAndView("redirect:ctr_stuShowCourse");
+		}
 		return mv;
 	}
 

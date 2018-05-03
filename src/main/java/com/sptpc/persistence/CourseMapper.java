@@ -16,4 +16,12 @@ public interface CourseMapper {
 
 	int updateCourse(Course course);
 
+	int deleteCourserByID(int parseInt);
+	
+	int deleteSelectCourseByID(int id);
+
+	int insertCourse(Course course);
+
+	List<Course> getCourseByTecID(int userID);
+
 }
